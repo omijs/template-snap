@@ -5,21 +5,13 @@ import '../app-intro'
 import 'omiu/button'
 
 define('my-app', class extends WeElement {
-  name = ''
+  name = 'Omi'
 
   clickHandler = () => {
     this.name = 'Omio'
     this.update()
   }
 
-  installed = ()=>{
-    setTimeout(()=>{
-      this.name='sfsdfsf'
-      this.update()
-    },3000)
-    
-
-  }
   css() {
     return style
   }
