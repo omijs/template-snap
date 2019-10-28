@@ -1,20 +1,17 @@
 import { define, WeElement } from 'omi'
-import logo from './logo.svg'
-import style from './_index.css'
+import logo from './omi.png'
+import css from './_index.css'
 import '../app-intro'
-import 'omiu/button'
 
 define('my-app', class extends WeElement {
-  name = 'Omi'
+
+  use = ['name']
 
   clickHandler = () => {
-    this.name = 'Omio'
-    this.update()
+    this.store.rename('Omio by Tencent')
   }
 
-  css() {
-    return style
-  }
+  static css = css
 
   render() {
     return (
@@ -26,10 +23,9 @@ define('my-app', class extends WeElement {
             class="app-logo"
             alt="logo"
           />
-          <h1 class="app-title">Welcome to {this.name}</h1>
+          <h1 class="app-title">Welcome to {this.store.data.name}</h1>
         </header>
         <app-intro />
-        <o-button style='width:200px;'>I am omiu button.</o-button>
       </div>
     )
   }
