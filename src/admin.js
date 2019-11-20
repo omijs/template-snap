@@ -4,5 +4,5 @@ import './elements/hello'
 import registerServiceWorker from './assets/register-service-worker'
 import store from './store/admin'
 
-render(<hello-element />, '#root', store)
+render(<hello-element />, '#root', store, false, document.querySelector('#root div'))
 registerServiceWorker()
